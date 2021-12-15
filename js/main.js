@@ -30,7 +30,7 @@ if(seconds < 10){
 countdownEl.innerHTML = `${hours}:${adjustMinutes}:${seconds}`
 time--;
 
-if(hours == 1 && adjustMinutes == 59 && seconds == 30){
+if(hours == 0 && adjustMinutes == 00 && seconds == 00){
     alert('Break Time!!!')
     }
 }
