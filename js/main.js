@@ -14,6 +14,8 @@ if(minutes % 60 == 0){
 }
 else if (minutes > 60){
     adjustMinutes = minutes - (Math.trunc(minutes / 60) * 60)  
+} else if(minutes < 10){
+    adjustMinutes = `0${minutes}`
 }  else {
     adjustMinutes = minutes
 }
@@ -28,12 +30,12 @@ if(seconds < 10){
 countdownEl.innerHTML = `${hours}:${adjustMinutes}:${seconds}`
 time--;
 
-if(hours == 0 && adjustMinutes == 00 && seconds == 00){
+if(hours == 1 && adjustMinutes == 59 && seconds == 30){
     alert('Break Time!!!')
+    }
 }
 // if(hours == 1 && adjustMinutes == 58 && seconds == 30){
 //     alert('Break Time!!!')
-}
 }
 
 document.querySelector('button').addEventListener("click", startTime)
