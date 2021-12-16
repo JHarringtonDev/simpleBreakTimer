@@ -1,11 +1,16 @@
-const startingMinutes = 120;
-let time = startingMinutes * 60
-
-const countdownEl = document.getElementById('countdown');
+function resetTime(){
+    window.location.reload();
+}
 
 function startTime(){
-    setInterval(updateCountdown, 1000)
+let startingMinutes = Number(document.getElementById("hours").value * 60) + Number(document.getElementById("minutes").value) ;
+let time = startingMinutes * 60
 
+
+
+const countdownEl = document.getElementById('countdown');
+  
+    setInterval(updateCountdown, 1000)
 function updateCountdown() {
     let adjustMinutes
 const minutes = Math.floor(time/60);
@@ -32,10 +37,13 @@ time--;
 
 if(hours == 0 && adjustMinutes == 00 && seconds == 00){
     alert('Break Time!!!')
-    }
+    }else if(countdownEl.innerHTML.includes("-")){
+    countdownEl.innerHTML = `0:00:00`
 }
-// if(hours == 1 && adjustMinutes == 58 && seconds == 30){
-//     alert('Break Time!!!')
+}
 }
 
-document.querySelector('button').addEventListener("click", startTime)
+
+
+document.querySelector('#start').addEventListener("click", startTime)
+document.quereSelector('#reset').addEventListener("click", resetTime)

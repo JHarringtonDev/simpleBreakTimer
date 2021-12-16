@@ -11,9 +11,21 @@
 </head>
 <body>
     <H1>Work Timer</H1>
-    <h2 id="countdown"></h2>
+    <section>
+        <h2 id="countdown"></h2>
+    </section>
+    <section>
+        <span>Hours:</span>
+        <input type="number" id="hours" name="hours"
+        min="0" max="24">
+        <span>Minutes</span>
+        <input type="number" id="minutes" name="minutes"
+        min="0" max="59">
+    </section>
+    <section>
     <button id=start>Start</button>
-    
+    <button onClick="window.location.reload();">Reset</button>
+    </section>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
