@@ -16,13 +16,10 @@ function updateCountdown() {
 const minutes = Math.floor(time/60);
 if(minutes % 60 == 0){
     adjustMinutes = "00"
-}
-else if (minutes > 60){
-    adjustMinutes = minutes - (Math.trunc(minutes / 60) * 60)  
-} else if(minutes < 10){
-    adjustMinutes = `0${minutes}`
-}  else {
-    adjustMinutes = minutes
+} else if((minutes%60) < 10){
+    adjustMinutes = `0${minutes%60}`
+} else {
+    adjustMinutes = minutes % 60
 }
 
 let hours = Math.trunc(minutes / 60)
